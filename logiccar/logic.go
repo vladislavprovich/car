@@ -10,7 +10,7 @@ type Car interface {
 	Drive(Fuel int) (int, error)
 }
 
-//мб можна по іншому
+// мб можна по іншому
 type LogicBmw carbrend.Bmw
 type LogicMers carbrend.Mers
 type LogicAudi carbrend.Audi
