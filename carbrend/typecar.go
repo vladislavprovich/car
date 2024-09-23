@@ -1,15 +1,16 @@
 package carbrend
 
-type car interface {
-	rapair(spend int) (int, bool, error)
-	drive(fuel int) (int, error)
-}
-
 type Bmw struct {
+	Spend int
+	Fuel  int
 }
 
 type Mers struct {
+	Spend int
+	Fuel  int
 }
 
 type Audi struct {
+	Spend int
+	Fuel  int
 }
