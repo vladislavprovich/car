@@ -1,6 +1,7 @@
 package main
 
 import (
+	"carProject/carbrend"
 	"carProject/logiccar"
 	"fmt"
 )
@@ -9,16 +10,15 @@ func main() {
 	var myCar logiccar.Car
 
 	fmt.Println("Твоє авто БВМ")
-	myCar = &logiccar.LogicBmw{Spend: 100, Fuel: 50}
+	myCar = &carbrend.Bmw{Spend: 100, Fuel: 50}
 	fmt.Println(myCar)
 	fmt.Println(myCar.Rapair(10))
-	fmt.Println(myCar)
 	fmt.Println(myCar.Drive(10))
 	fmt.Println(myCar)
 	fmt.Println("")
 
 	fmt.Println("Твоє авто Мерседес")
-	myCar = &logiccar.LogicMers{Spend: 100, Fuel: 50}
+	myCar = &carbrend.Mers{Spend: 100, Fuel: 50}
 	fmt.Println(myCar)
 	fmt.Println(myCar.Rapair(60))
 	fmt.Println(myCar)
@@ -27,7 +27,7 @@ func main() {
 	fmt.Println("")
 
 	fmt.Println("Твоє авто Ауді")
-	myCar = &logiccar.LogicAudi{Spend: 100, Fuel: 50}
+	myCar = &carbrend.Audi{Spend: 100, Fuel: 50}
 	fmt.Println(myCar)
 	fmt.Println(myCar.Rapair(45))
 	fmt.Println(myCar)
