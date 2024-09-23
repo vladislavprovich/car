@@ -3,91 +3,93 @@ package carbrend
 import "fmt"
 
 type Bmw struct {
-	Spend int
-	Fuel  int
+	Spend uint
+	Fuel  uint
 }
 
 type Mers struct {
-	Spend int
-	Fuel  int
+	Spend uint
+	Fuel  uint
 }
 
 type Audi struct {
-	Spend int
-	Fuel  int
+	Spend uint
+	Fuel  uint
 }
 
-func (b *Bmw) Rapair(spend int) (int, bool, error) {
+func (b *Bmw) Rapair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
-		fmt.Println("Залишок після ремонту", spend, true)
+		fmt.Print("Залишок після ремонту ")
 		b.Spend = spend
-		return spend, true, fmt.Errorf("Ремонт відбувся")
+		return spend, true, fmt.Errorf(",Ремонт відбувся")
 	} else {
-		fmt.Println("Залишок після ремонту", spend, false, fmt.Errorf("Ремонт не відбувся"))
-		return spend, false, fmt.Errorf("Ремонт не відбувся")
+		fmt.Print("Залишок після ремонту ")
+		return 0, false, fmt.Errorf(",Ремонт не відбувся")
 	}
-
 }
 
-func (b *Bmw) Drive(fuel int) (int, error) {
+func (b *Bmw) Drive(fuel uint) (uint, error) {
 	fuel = b.Fuel - fuel
 	if fuel < b.Fuel {
-		fmt.Println("Залишилось палива", fuel)
+		fmt.Print("Залишилось палива ")
 		b.Fuel = fuel
-		return fuel, nil
+		return fuel, fmt.Errorf(",палива вистачить")
 	} else {
-		return fuel, fmt.Errorf("Палива немає")
+		b.Fuel = 0
+		return 0, fmt.Errorf("Палива немає")
 	}
 }
 
-func (b *Mers) Rapair(spend int) (int, bool, error) {
+func (b *Mers) Rapair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
-		fmt.Println("Залишок після ремонту", spend, true)
+		fmt.Print("Залишок після ремонту ")
 		b.Spend = spend
-		return spend, true, fmt.Errorf("Ремонт відбувся")
+		return spend, true, fmt.Errorf(",Ремонт відбувся")
 	} else {
-		fmt.Println("Залишок після ремонту", spend, false, fmt.Errorf("Ремонт не відбувся"))
-		return spend, false, fmt.Errorf("Ремонт не відбувся")
+		fmt.Print("Залишок після ремонту ")
+		return 0, false, fmt.Errorf(",Ремонт не відбувся")
 	}
 
 }
 
-func (b *Mers) Drive(fuel int) (int, error) {
+func (b *Mers) Drive(fuel uint) (uint, error) {
 	fuel = b.Fuel - fuel
 	if fuel < b.Fuel {
-		fmt.Println("Залишилось палива", fuel)
+		fmt.Print("Залишилось палива ")
 		b.Fuel = fuel
-		return fuel, nil
+		return fuel, fmt.Errorf(",палива вистачить")
 	} else {
-		return fuel, fmt.Errorf("Палива немає")
+		b.Fuel = 0
+		return 0, fmt.Errorf("Палива немає")
 	}
 }
 
-func (b *Audi) Rapair(spend int) (int, bool, error) {
+func (b *Audi) Rapair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
-		fmt.Println("Залишок після ремонту", spend, true)
+		fmt.Print("Залишок після ремонту ")
 		b.Spend = spend
-		return spend, true, fmt.Errorf("Ремонт відбувся")
+		return spend, true, fmt.Errorf(",Ремонт відбувся")
 	} else {
-		fmt.Println("Залишок після ремонту", spend, false, fmt.Errorf("Ремонт не відбувся"))
-		return spend, false, fmt.Errorf("Ремонт не відбувся")
+		fmt.Print("Залишок після ремонту ")
+		return 0, false, fmt.Errorf(",Ремонт не відбувся")
 	}
 
 }
 
-func (b *Audi) Drive(fuel int) (int, error) {
+func (b *Audi) Drive(fuel uint) (uint, error) {
 	fuel = b.Fuel - fuel
 	if fuel < b.Fuel {
-		fmt.Println("Залишилось палива", fuel)
+		fmt.Print("Залишилось палива ")
 		b.Fuel = fuel
-		return fuel, nil
+		return fuel, fmt.Errorf(",палива вистачить")
 	} else {
-		return fuel, fmt.Errorf("Палива немає")
+		b.Fuel = 0
+		return 0, fmt.Errorf("Палива немає")
 	}
 }
