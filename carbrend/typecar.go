@@ -17,11 +17,11 @@ type Audi struct {
 	Fuel  uint
 }
 
-func (b *Bmw) Rapair(spend uint) (uint, bool, error) {
+func (b *Bmw) Repair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
-		fmt.Print("Залишок після ремонту ")
+		fmt.Print("Залишок після ремонту ", spend)
 		b.Spend = spend
 		return spend, true, fmt.Errorf(",Ремонт відбувся")
 	} else {
@@ -33,7 +33,7 @@ func (b *Bmw) Rapair(spend uint) (uint, bool, error) {
 func (b *Bmw) Drive(fuel uint) (uint, error) {
 	fuel = b.Fuel - fuel
 	if fuel < b.Fuel {
-		fmt.Print("Залишилось палива ")
+		fmt.Printf(" Залишилось палива %v \n", fuel)
 		b.Fuel = fuel
 		return fuel, fmt.Errorf(",палива вистачить")
 	} else {
@@ -42,7 +42,7 @@ func (b *Bmw) Drive(fuel uint) (uint, error) {
 	}
 }
 
-func (b *Mers) Rapair(spend uint) (uint, bool, error) {
+func (b *Mers) Repair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
@@ -68,7 +68,7 @@ func (b *Mers) Drive(fuel uint) (uint, error) {
 	}
 }
 
-func (b *Audi) Rapair(spend uint) (uint, bool, error) {
+func (b *Audi) Repair(spend uint) (uint, bool, error) {
 	spend = b.Spend - spend
 
 	if spend < b.Spend {
